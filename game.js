@@ -302,6 +302,9 @@
   }
   resizeFx();
   window.addEventListener("resize", resizeFx);
+  window.addEventListener("resize", () => {
+    if (bannerEl.classList.contains("show")) fitBanner();
+  });
 
   function burst(x, y, count, power) {
     for (let i = 0; i < count; i++) {
@@ -673,11 +676,24 @@
   // ---------- Banner / HUD ----------
   let bannerTimer = null;
 
+  function fitBanner() {
+    bannerEl.style.fontSize = "";
+    const max = Math.min(reelsEl.clientWidth, window.innerWidth - 24);
+    for (let i = 0; i < 8; i++) {
+      const width = bannerEl.scrollWidth;
+      if (width <= max) break;
+      const size = parseFloat(getComputedStyle(bannerEl).fontSize);
+      bannerEl.style.fontSize = Math.max(12, size * (max / width) * 0.98) + "px";
+    }
+  }
+
   function showBanner(html, variant) {
     clearTimeout(bannerTimer);
     bannerEl.className = "banner";
     bannerEl.innerHTML = html;
     if (variant) bannerEl.classList.add(variant);
+    fitBanner();
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(fitBanner);
     void bannerEl.offsetWidth;
     bannerEl.classList.add("show");
     bannerTimer = setTimeout(() => bannerEl.classList.remove("show"), 2200);
