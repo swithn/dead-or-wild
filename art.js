@@ -68,14 +68,24 @@
 
   SLOT_ART.revolver = `
 <svg viewBox="0 0 100 100" role="img" aria-label="Revolver">
-  <g transform="rotate(-12 50 50)">
-    <rect x="14" y="40" width="54" height="12" rx="3" fill="#8d99a3" stroke="#20262b" stroke-width="2.5"/>
-    <rect x="14" y="44" width="54" height="4" fill="#c7d0d6"/>
-    <circle cx="50" cy="46" r="13" fill="#6f7a83" stroke="#20262b" stroke-width="2.5"/>
-    <circle cx="50" cy="46" r="6" fill="#3c454c"/>
-    <path d="M30 40 h16 v30 h-16 z" fill="#5b666e" stroke="#20262b" stroke-width="2.5"/>
-    <path d="M30 60 C20 66 16 78 18 92 L36 92 C34 80 38 70 44 64 Z" fill="#7a4a24" stroke="#3a2412" stroke-width="2.5"/>
-    <path d="M40 58 C46 58 48 65 45 70" fill="none" stroke="#20262b" stroke-width="2.5"/>
+  <g transform="rotate(-10 50 50)">
+    <path d="M31 53 C27 63 21 77 17 90 L35 93 C40 79 45 67 47 59 Z" fill="#7a4a24" stroke="#2a1a0e" stroke-width="2.5" stroke-linejoin="round"/>
+    <path d="M29 60 C26 70 22 81 20 89" fill="none" stroke="#5a3416" stroke-width="1.6" opacity="0.8"/>
+    <path d="M35 63 C32 73 29 83 28 91" fill="none" stroke="#5a3416" stroke-width="1.4" opacity="0.6"/>
+    <path d="M27 34 H57 V59 H47 C40 59 33 55 29 51 Z" fill="#6f7a83" stroke="#20262b" stroke-width="2.5" stroke-linejoin="round"/>
+    <path d="M55 38 H91 C93 38 94 39 94 41 V47 C94 49 93 50 91 50 H55 Z" fill="#8d99a3" stroke="#20262b" stroke-width="2.5" stroke-linejoin="round"/>
+    <rect x="57" y="40.5" width="33" height="3" rx="1.5" fill="#c7d0d6"/>
+    <rect x="90" y="40" width="3" height="8" fill="#3c454c"/>
+    <rect x="58" y="50" width="28" height="4.5" rx="2" fill="#5b666e" stroke="#20262b" stroke-width="1.8"/>
+    <circle cx="45" cy="48" r="13" fill="#7d8891" stroke="#20262b" stroke-width="2.5"/>
+    <circle cx="45" cy="48" r="9" fill="none" stroke="#5f6a72" stroke-width="1.5"/>
+    <circle cx="45" cy="48" r="3" fill="#39424a" stroke="#20262b" stroke-width="1"/>
+    <path d="M37.5 39 C35.5 45 35.5 51 37.5 57 M52.5 39 C54.5 45 54.5 51 52.5 57" fill="none" stroke="#3c454c" stroke-width="1.6" stroke-linecap="round"/>
+    <path d="M30 35 L25 29 L21 32 L25 38 Z" fill="#5b666e" stroke="#20262b" stroke-width="2" stroke-linejoin="round"/>
+    <path d="M55 57 C60 63 60 71 54 76 C48 81 41 78 40 71 C39 66 41 61 44 59" fill="none" stroke="#20262b" stroke-width="3" stroke-linecap="round"/>
+    <path d="M48 62 C50 66 48 70 44 71" fill="none" stroke="#20262b" stroke-width="2.4" stroke-linecap="round"/>
+    <path d="M83 38 L85 33 L88 33 L88 38 Z" fill="#5b666e" stroke="#20262b" stroke-width="1.5" stroke-linejoin="round"/>
+    <rect x="54" y="34" width="3" height="5" fill="#5b666e" stroke="#20262b" stroke-width="1.2"/>
   </g>
 </svg>`;
 
