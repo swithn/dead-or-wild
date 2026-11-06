@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<meta name="theme-color" content="#1a0f08" />
+<title>Dead or Wild — Slot</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Rye&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<div class="scene" id="scene" aria-hidden="true"></div>
+<canvas id="fx"></canvas>
+
+<div class="stage">
+  <div class="topbar">
+    <div class="brand">
+      <span class="mark">&#9733;</span>
+      <div>
+        <h1>DEAD <em>or</em> WILD</h1>
+        <p class="tag">Wanted &middot; Dead or a Wild</p>
+      </div>
+    </div>
+    <div class="topright">
+      <div class="balance-pill">
+        <span class="k">Balance</span>
+        <span class="v" id="balanceVal">10,000</span>
+      </div>
+      <div class="maxwin">
+        <div class="label">Max Win</div>
+        <div class="amount">12,500&times;</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="machine">
+    <div class="reels" id="reels">
+      <svg class="lines" id="lines" xmlns="http://www.w3.org/2000/svg"></svg>
+      <div class="reel" data-col="0"><div class="strip"></div></div>
+      <div class="reel" data-col="1"><div class="strip"></div></div>
+      <div class="reel" data-col="2"><div class="strip"></div></div>
+      <div class="reel" data-col="3"><div class="strip"></div></div>
+      <div class="reel" data-col="4"><div class="strip"></div></div>
+    </div>
+    <div class="banner" id="banner"></div>
+  </div>
+
+  <div class="featurebar" id="featurebar"></div>
+
+  <div class="hud">
+    <div class="stat">
+      <span class="k">Bet</span>
+      <div class="betrow">
+        <button class="betbtn" id="betDown" aria-label="Decrease bet">&minus;</button>
+        <span class="v" id="betVal">10</span>
+        <button class="betbtn" id="betUp" aria-label="Increase bet">+</button>
+      </div>
+    </div>
+    <div class="stat win">
+      <span class="k">Last Win</span>
+      <span class="v" id="lastWinVal">0</span>
+    </div>
+    <div class="stat bounty">
+      <span class="k">Bounty</span>
+      <span class="v" id="bountyVal">0</span>
+    </div>
+  </div>
+
+  <div class="controls">
+    <button class="btn" id="payBtn">PAYTABLE</button>
+    <button class="btn" id="spinBtn">SPIN</button>
+    <button class="btn" id="autoBtn">AUTO</button>
+    <button class="btn" id="speedBtn" title="Spin speed (T)">SPEED &times;1</button>
+    <button class="btn" id="soundBtn">SOUND</button>
+    <button class="btn" id="bonusBtn">BONUS</button>
+  </div>
+
+  <button class="topup" id="topupBtn">CLAIM 10,000 FREE CREDITS</button>
+
+  <div class="foot">Fan-made homage &middot; play-money demo &middot; not affiliated with Hacksaw Gaming</div>
+</div>
+
+<div class="modal" id="paytable">
+  <div class="card">
+    <button class="close" id="closePay" aria-label="Close">&#10005;</button>
+    <h2>PAYTABLE</h2>
+    <p class="sub">Wins pay left to right on 15 fixed paylines. Payouts are multiples of your total bet. Wilds substitute for all paying symbols. Max win is 12,500&times; bet.</p>
+    <div id="ptableRows"></div>
+    <div class="bonus-note">
+      <b>VS DUELREELS</b> — Two outlaws face off. When a VS symbol would complete a win, its whole reel turns wild and carries a multiplier that is added to line wins.<br><br>
+      <b>DUEL AT DAWN</b> — 3+ DUEL scatters award 10 free spins with boosted VS reels.<br><br>
+      <b>THE GREAT TRAIN ROBBERY</b> — 3+ TRAIN scatters award 10 free spins where every wild sticks for the rest of the feature.<br><br>
+      <b>DEAD MAN'S HAND</b> — 3+ DEAD scatters start a hold-and-spin. Collect wilds and multipliers, then face the showdown with every collected wild on the reels.
+    </div>
+    <div class="ptable-foot">
+      <span>15 Paylines &middot; 5&times;5</span>
+      <button class="linkbtn" id="resetBtn">Reset progress</button>
+    </div>
+  </div>
+</div>
+
+<div class="modal" id="bonusModal">
+  <div class="card">
+    <button class="close" id="closeBonus" aria-label="Close">&#10005;</button>
+    <h2>BONUS BUY</h2>
+    <p class="sub">Skip the hunt and buy a feature instantly. Costs are a multiple of your current bet.</p>
+    <div class="buylist" id="buyList"></div>
+    <div class="ptable-foot"><span>Play money only</span></div>
+  </div>
+</div>
+
+<script src="art.js"></script>
+<script src="game.js"></script>
+</body>
+</html>
